@@ -1,7 +1,4 @@
-### hyundai_ondevice_ai_project_1
-##hyundai_ondevice_ai_project_1
-
-#현대INSIGHT Ondevice AI 1기 1st Project
+# Hyundai On-Device AI Project 1
 
 ## 프로젝트 목표
 
