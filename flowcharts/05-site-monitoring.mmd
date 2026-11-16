@@ -1,0 +1,12 @@
+flowchart TD
+  RGB["실제 작업자 영상"] --> PPE["보호구·인원 판단"]
+  ENV["온습도 센서"] --> RANGE["설정 범위 비교"]
+  IR["열화상 입력"] --> HEAT["과열 징후 판단"]
+  PPE --> STATUS["원인별 상태 통합"]
+  RANGE --> STATUS
+  HEAT --> STATUS
+  STATUS --> DISPLAY["상태 표시<br/>조건 충족 시 경보"]
+  classDef warn fill:#f8cecc,stroke:#b85450,color:#172033;
+  classDef pending fill:#fff2cc,stroke:#d6b656,color:#172033;
+  class DISPLAY warn;
+  class HEAT pending;

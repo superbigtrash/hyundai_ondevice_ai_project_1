@@ -1,0 +1,9 @@
+flowchart LR
+  DELAY["통과 후 설정 시간 대기"] --> CLEAR{"닫힘 조건 충족?"}
+  CLEAR -->|"예"| CLOSE["모형 닫힘 명령"]
+  CLEAR -->|"아니요·불명확"| HOLD["닫힘 보류·재확인"]
+  CLOSE --> DONE["완료 확인 후<br/>다음 사람 판정"]
+  classDef pending fill:#fff2cc,stroke:#d6b656,color:#172033;
+  classDef ok fill:#d5e8d4,stroke:#82b366,color:#172033;
+  class CLEAR,HOLD pending;
+  class DONE ok;

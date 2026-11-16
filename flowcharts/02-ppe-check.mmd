@@ -1,0 +1,11 @@
+flowchart LR
+  FRAME["실제 사람 영상"] --> PPE{"보호구 판정"}
+  PPE -->|"둘 다 착용"| CHECK{"연속 확인 충족?"}
+  PPE -->|"그 외 상태"| HOLD["개방 보류"]
+  CHECK -->|"아니요"| HOLD
+  CHECK -->|"예"| OK["개방 승인<br/>통과 확인 단계로"]
+  HOLD --> RETRY["다음 영상 재확인"]
+  classDef ok fill:#d5e8d4,stroke:#82b366,color:#172033;
+  classDef pending fill:#fff2cc,stroke:#d6b656,color:#172033;
+  class OK ok;
+  class PPE,CHECK,HOLD pending;

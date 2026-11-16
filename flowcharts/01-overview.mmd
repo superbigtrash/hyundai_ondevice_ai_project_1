@@ -1,0 +1,9 @@
+flowchart TD
+  PC["PC 모델 학습"] -->|"배포"| G["출입구 Pi"]
+  PC -->|"배포"| S["현장 Pi"]
+  G --> P["실제 사람<br/>보호구 확인"]
+  P --> M["모형 바리케이드<br/>출입구 LED"]
+  S --> E["작업자·환경 감시"]
+  E --> A["화면·모형 LED·부저"]
+  classDef output fill:#d5e8d4,stroke:#82b366,color:#172033;
+  class M,A output;

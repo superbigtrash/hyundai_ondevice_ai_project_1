@@ -1,0 +1,11 @@
+flowchart LR
+  SIGNAL["모형 개방 후<br/>통과 신호 확인"]
+  SIGNAL --> PASS{"통과 확인?"}
+  PASS -->|"예"| NEXT["닫힘 제어 단계로"]
+  PASS -->|"아니요"| LIMIT{"대기 한도 초과?"}
+  LIMIT -->|"아니요"| WAIT["통과 신호 재확인"]
+  LIMIT -->|"예"| POLICY["미통과 정책 적용"]
+  classDef pending fill:#fff2cc,stroke:#d6b656,color:#172033;
+  classDef ok fill:#d5e8d4,stroke:#82b366,color:#172033;
+  class SIGNAL,LIMIT,POLICY pending;
+  class NEXT ok;
