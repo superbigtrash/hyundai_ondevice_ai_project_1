@@ -1,5 +1,7 @@
 # Hyundai On-Device AI Project 1
 
+## [담당별 의사 결정표](https://docs.google.com/spreadsheets/d/1c5zt0x4KSHxVt-EMyBT3aD2tls_gLXW5-ePxF4dMnsE/edit?gid=6031119#gid=6031119)
+
 ## 프로젝트 목표
 
 라즈베리파이 2대를 활용하여 **작업구역 출입 시 보호구 착용 여부를 확인하고, 현장 작업자의 보호구 착용 상태와 온습도를 지속적으로 모니터링하는 AI 안전관리 시스템**을 구현한다.
