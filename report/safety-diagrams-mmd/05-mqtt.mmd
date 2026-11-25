@@ -1,0 +1,13 @@
+flowchart TB
+    s["서버 실행 프로그램"]:::base
+    m["MQTT 브로커"]:::base
+    a["Pi A｜출입구<br/>판정 결과·출입구 동작"]:::base
+    b["Pi B｜현장 감시<br/>보호구·열화상(확장)·경보"]:::base
+    c["Pi C｜설비 제어<br/>명령 수신·상태 송신"]:::base
+    s ---|"메시지 연동"| m
+    m ---|"result  /  door"| a
+    m ---|"ppe  /  thermal  /  alarm"| b
+    m ---|"cmd  /  status"| c
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f
