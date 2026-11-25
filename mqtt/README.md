@@ -7,10 +7,10 @@
  
 | 기기 | 역할 | 호스트명 | IP (예시) | 언어 | 파일 |
 |---|---|---|---|---|---|
-| 노트북 | 브로커 + 중앙 서버 | - | 192.168.20.123 | Python | `server/server.py` |
+| 노트북 | 브로커 + 중앙 서버 | - | 192.168.20.123 | Python | `server/server.py` (콘솔)<br>`server/server_gui.py` (대시보드) |
 | **1번 파이** | ③ 설비 제어부 | JGH1628 | 192.168.20.26 | C | `equipment/pi_equipment.c` |
-| **2번 파이** | ① 입구 제어부 | rpi-jsm6049 | 192.168.20.45 | Python | `entrance/pi_entrance.py` |
-| **3번 파이** | ② 현장 감시부 | rpi-kks2021 | 192.168.20.168 | Python | `site/pi_site.py` |
+| **2번 파이** | ② 현장 감시부 | rpi-jsm6049 | 192.168.20.45 | Python | `site/pi_site.py` |
+| **3번 파이** | ① 입구 제어부 | rpi-kks2021 | 192.168.20.168 | Python | `entrance/pi_entrance.py` (키보드 테스트)<br>`entrance/pi_entrance_yolo.py` (YOLO 판정) |
  
 > IP는 공유기가 자동으로 나눠주기 때문에 바뀔 수 있습니다. 접속이 안 되면 `ipconfig`(노트북)와 `hostname -I`(파이)로 먼저 확인하세요.
  
@@ -22,7 +22,7 @@ AI·카메라가 들어가는 파이는 Python, 단순 제어만 하는 설비 �
  
 | 토픽 | 보내는 쪽 → 받는 쪽 | 내용 예시 | 의미 |
 |---|---|---|---|
-| `safety/entrance/result` | 입구 → 서버 | `{"helmet": true, "vest": true}` | 보호구 판정 결과 |
+| `safety/entrance/result` | 입구 → 서버 | `{"helmet": true, "vest": true, "persons": 1, "detections": [...]}` | 보호구 판정 결과 (YOLO 버전은 사람 수와 박스 목록 포함) |
 | `safety/entrance/door` | 입구 → 서버 | `{"door": "open"}` | 문 상태 (`open` / `closed`) |
 | `safety/site/ppe` | 현장 → 서버 | `{"helmet": false, "vest": true}` | 작업자 착용 감시 결과 |
 | `safety/site/thermal` | 현장 → 서버 | `{"max_temp": 65.0}` | 열화상 최고 온도 (°C) |
@@ -32,8 +32,8 @@ AI·카메라가 들어가는 파이는 Python, 단순 제어만 하는 설비 �
  
 ```mermaid
 flowchart LR
-    E["① 입구<br>2번 파이"] -- "entrance/result<br>entrance/door" --> B(("브로커"))
-    S["② 현장<br>3번 파이"] -- "site/ppe<br>site/thermal" --> B
+    E["① 입구<br>3번 파이"] -- "entrance/result<br>entrance/door" --> B(("브로커"))
+    S["② 현장<br>2번 파이"] -- "site/ppe<br>site/thermal" --> B
     Q["③ 설비<br>1번 파이"] -- "equipment/status" --> B
     B -- "safety/#" --> SV["중앙 서버"]
     SV -- "site/alarm" --> B
@@ -66,7 +66,7 @@ New-NetFirewallRule -DisplayName "MQTT 1883" -Direction Inbound -Protocol TCP -L
 pip install -r requirements.txt
 ```
  
-### 2번 파이(입구) / 3번 파이(현장) — Python
+### 2번 파이(현장) / 3번 파이(입구) — Python
  
 라즈베리파이 OS는 시스템 보호를 위해 `pip install`을 막아두므로 가상환경을 사용합니다.
 `--system-site-packages`는 나중에 카메라 라이브러리(picamera2)를 같이 쓰기 위한 옵션입니다.
@@ -96,13 +96,52 @@ C 코드의 `#define BROKER` 주소를 바꾸면 **반드시 다시 컴파일**�
 | 순서 | 위치 | 명령 |
 |---|---|---|
 | 1 | 노트북 (브로커) | `cd "C:\Program Files\mosquitto"` → `.\mosquitto -c mosquitto.conf -v` |
-| 2 | 노트북 (서버) | `python server.py` |
+| 2 | 노트북 (서버) | `python server.py` 또는 `python server_gui.py` (둘 중 **하나만**) |
 | 3 | 1번 파이 (설비) | `./pi_equipment` |
-| 4 | 3번 파이 (현장) | `source ~/venv/bin/activate` → `python pi_site.py` |
-| 5 | 2번 파이 (입구) | `source ~/venv/bin/activate` → `python pi_entrance.py` |
+| 4 | 2번 파이 (현장) | `source ~/venv/bin/activate` → `python pi_site.py` |
+| 5 | 3번 파이 (입구) | `source ~/venv/bin/activate` → `python pi_entrance.py` |
  
 PowerShell에서는 현재 폴더의 프로그램 앞에 `.\`를 붙여야 실행됩니다.
  
+## 입구 YOLO 판정 (pi_entrance_yolo.py)
+ 
+카메라 사진을 `best_int8.onnx`(YOLO26n, INT8 양자화, 입력 416×416)로 판정해서 결과를 MQTT로 보냅니다.
+ 
+| 항목 | 내용 |
+|---|---|
+| 클래스 | `helmet`, `no_helmet`, `vest`, `no_vest`, `person` |
+| 판정 | 화면에 `helmet`이 있고 `no_helmet`이 없으면 안전모 착용 (안전복도 같은 방식) |
+| 확정 | 같은 결과가 **5장 연속**이면 확정해서 **한 번만** 전송 |
+| 사람 없음 | 보내지 않고 초기화 → 다음 사람이 오면 다시 판정 |
+| 속도 | 5초마다 FPS를 화면에 출력 |
+ 
+설치 (3번 파이, 가상환경 켠 상태):
+ 
+```
+sudo apt install python3-picamera2 python3-opencv
+pip install onnxruntime
+```
+ 
+`best_int8.onnx`를 코드와 같은 폴더에 두고 `python pi_entrance_yolo.py`로 실행합니다.
+키보드 테스트 버전(`pi_entrance.py`)과 이름(`client_id`)이 같으니 **둘 중 하나만** 실행하세요.
+ 
+## 대시보드 (server_gui.py)
+ 
+`server.py`와 같은 일을 **CustomTkinter**(다크 모드, 둥근 카드 디자인) 창으로 보여주는 버전입니다.
+`pip install -r requirements.txt`로 `customtkinter`도 같이 설치됩니다.
+ 
+| 영역 | 내용 |
+|---|---|
+| 맨 위 | 브로커 연결 상태 (초록: 연결 / 빨강: 끊김) |
+| ① 입구 | 보호구 판정 결과, 출입문 상태 |
+| ② 현장 | 착용 감시, 최고 온도(50°C 이상 빨강), 경보 상태, 경보 켜기·끄기 버튼 |
+| ③ 설비 | 모터 상태, 설비 차단·해제 버튼 |
+| 출입 통계 | 통과, 거부, 통과율, 안전모·안전복 미착용 횟수, 초기화 (날짜가 바뀌면 자동 초기화) |
+| 메시지 기록 | 시간과 함께 송신·수신 메시지 표시 |
+ 
+- 두 파일 모두 `client_id="server"`를 쓰기 때문에 **동시에 실행하면 서로 접속을 끊습니다.** 하나만 실행하세요.
+- 출입 통계는 프로그램을 끄면 0으로 돌아갑니다.
+- MQTT 콜백은 별도 스레드에서 실행되므로, 받은 메시지를 `queue`에 넣고 화면 쪽에서 `root.after()`로 0.1초마다 꺼내 처리합니다.
 ## 통신 테스트
  
 | 테스트 | 어디서 | 입력 | 확인할 곳 |
