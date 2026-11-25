@@ -58,5 +58,6 @@
 ### Used Data Set
 
 Safety Equipment detection : https://docs.ultralytics.com/datasets/detect/construction-ppe
+
 Used Classes / Total Classes : 5 classes / 11 classes 
 
