@@ -55,3 +55,8 @@
 3. 작업구역 내부에서 보호구를 벗으면 미착용 경고와 LED·부저 경보가 발생한다.
 4. 온도 또는 습도가 설정 범위를 벗어나면 해당 측정값과 이상 상태가 표시된다.
 
+### Used Data Set
+
+Safety Equipment detection : https://docs.ultralytics.com/datasets/detect/construction-ppe
+Used Classes / Total Classes : 5 classes / 11 classes 
+
