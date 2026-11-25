@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>프로그램 코드 모듈 다이어그램</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">프로그램 코드 모듈 다이어그램</text><text x="57" y="113" font-size="24" fill="#415b69">첨부 구성도에 적힌 가명으로 실행 위치와 모듈의 책임을 표시했다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 04</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 827.78 391.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 382.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>s</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M551,-374C551,-374 417,-374 417,-374 411,-374 405,-368 405,-362 405,-362 405,-330 405,-330 405,-324 411,-318 417,-318 417,-318 551,-318 551,-318 557,-318 563,-324 563,-330 563,-330 563,-362 563,-362 563,-368 557,-374 551,-374" />
+<text text-anchor="middle" x="484" y="-351.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">서버｜project.py</text>
+<text text-anchor="middle" x="484" y="-332.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">실행·메시지 전송</text>
+</g>
+
+<g id="node2" class="node">
+<title>m</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M535,-268C535,-268 433,-268 433,-268 427,-268 421,-262 421,-256 421,-256 421,-224 421,-224 421,-218 427,-212 433,-212 433,-212 535,-212 535,-212 541,-212 547,-218 547,-224 547,-224 547,-256 547,-256 547,-262 541,-268 535,-268" />
+<text text-anchor="middle" x="484" y="-245.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">MQTT 브로커</text>
+<text text-anchor="middle" x="484" y="-226.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">토픽 중계</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>s-&gt;m</title>
+<path fill="none" stroke="#51707d" d="M484,-317.95C484,-302.66 484,-283.6 484,-268.28" />
+<text text-anchor="middle" x="516" y="-289.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">메시지 연동</text>
+</g>
+
+<g id="node3" class="node">
+<title>a</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M358.5,-162C358.5,-162 169.5,-162 169.5,-162 163.5,-162 157.5,-156 157.5,-150 157.5,-150 157.5,-118 157.5,-118 157.5,-112 163.5,-106 169.5,-106 169.5,-106 358.5,-106 358.5,-106 364.5,-106 370.5,-112 370.5,-118 370.5,-118 370.5,-150 370.5,-150 370.5,-156 364.5,-162 358.5,-162" />
+<text text-anchor="middle" x="264" y="-139.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi A｜pi_entrance.py</text>
+<text text-anchor="middle" x="264" y="-120.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">출입 판정·표시·결과 송신</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>m-&gt;a</title>
+<path fill="none" stroke="#51707d" d="M426.77,-211.95C394.31,-196.6 353.8,-177.45 321.32,-162.1" />
+<text text-anchor="middle" x="414" y="-183.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">토픽 연동</text>
+</g>
+
+<g id="node4" class="node">
+<title>b</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M558,-162C558,-162 410,-162 410,-162 404,-162 398,-156 398,-150 398,-150 398,-118 398,-118 398,-112 404,-106 410,-106 410,-106 558,-106 558,-106 564,-106 570,-112 570,-118 570,-118 570,-150 570,-150 570,-156 564,-162 558,-162" />
+<text text-anchor="middle" x="484" y="-139.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi B｜pi_site.py</text>
+<text text-anchor="middle" x="484" y="-120.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">현장 감지·결과 송신</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>m-&gt;b</title>
+<path fill="none" stroke="#51707d" d="M484,-211.95C484,-196.66 484,-177.6 484,-162.28" />
+<text text-anchor="middle" x="510" y="-183.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">토픽 연동</text>
+</g>
+
+<g id="node5" class="node">
+<title>c</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M798.5,-162C798.5,-162 609.5,-162 609.5,-162 603.5,-162 597.5,-156 597.5,-150 597.5,-150 597.5,-118 597.5,-118 597.5,-112 603.5,-106 609.5,-106 609.5,-106 798.5,-106 798.5,-106 804.5,-106 810.5,-112 810.5,-118 810.5,-118 810.5,-150 810.5,-150 810.5,-156 804.5,-162 798.5,-162" />
+<text text-anchor="middle" x="704" y="-139.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi C｜pi_equipment.c</text>
+<text text-anchor="middle" x="704" y="-120.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">경보·설비 제어·상태 송신</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>m-&gt;c</title>
+<path fill="none" stroke="#51707d" d="M541.23,-211.95C573.69,-196.6 614.2,-177.45 646.68,-162.1" />
+<text text-anchor="middle" x="634" y="-183.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">토픽 연동</text>
+</g>
+
+<g id="node6" class="node">
+<title>pa</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M152,-56C152,-56 12,-56 12,-56 6,-56 0,-50 0,-44 0,-44 0,-12 0,-12 0,-6 6,0 12,0 12,0 152,0 152,0 158,0 164,-6 164,-12 164,-12 164,-44 164,-44 164,-50 158,-56 152,-56" />
+<text text-anchor="middle" x="82" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">A｜predict.py</text>
+<text text-anchor="middle" x="82" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">카메라·YOLO 검출</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>a-&gt;pa</title>
+<path fill="none" stroke="#51707d" d="M216.66,-105.95C191.9,-91.8 161.49,-74.42 135.83,-59.76" />
+<polygon fill="#51707d" stroke="#51707d" points="136.92,-57.48 129.42,-56.1 134.42,-61.86 136.92,-57.48" />
+<text text-anchor="middle" x="210" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">검출 사용</text>
+</g>
+
+<g id="node8" class="node">
+<title>ar</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M351,-56C351,-56 203,-56 203,-56 197,-56 191,-50 191,-44 191,-44 191,-12 191,-12 191,-6 197,0 203,0 203,0 351,0 351,0 357,0 363,-6 363,-12 363,-12 363,-44 363,-44 363,-50 357,-56 351,-56" />
+<text text-anchor="middle" x="277" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Arduino 제어 코드</text>
+<text text-anchor="middle" x="277" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">센서 판독·모터 구동</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>a-&gt;ar</title>
+<path fill="none" stroke="#51707d" d="M267.38,-105.95C268.99,-93.05 270.94,-77.47 272.66,-63.71" />
+<polygon fill="#51707d" stroke="#51707d" points="275.2,-63.74 273.59,-56.28 270.2,-63.11 275.2,-63.74" />
+<text text-anchor="middle" x="298" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">장치 연동</text>
+</g>
+
+<g id="node7" class="node">
+<title>pb</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M554,-56C554,-56 414,-56 414,-56 408,-56 402,-50 402,-44 402,-44 402,-12 402,-12 402,-6 408,0 414,0 414,0 554,0 554,0 560,0 566,-6 566,-12 566,-12 566,-44 566,-44 566,-50 560,-56 554,-56" />
+<text text-anchor="middle" x="484" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">B｜predict.py</text>
+<text text-anchor="middle" x="484" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">카메라·YOLO 검출</text>
+</g>
+
+<g id="edge7" class="edge">
+<title>b-&gt;pb</title>
+<path fill="none" stroke="#51707d" d="M484,-105.95C484,-93.05 484,-77.47 484,-63.71" />
+<polygon fill="#51707d" stroke="#51707d" points="486.52,-63.48 484,-56.28 481.48,-63.48 486.52,-63.48" />
+<text text-anchor="middle" x="510" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">검출 사용</text>
+</g>
+</g>
+</svg></svg>

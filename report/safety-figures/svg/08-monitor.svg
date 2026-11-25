@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>현장 감시와 경보 흐름</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">현장 감시와 경보 흐름</text><text x="57" y="113" font-size="24" fill="#415b69">보호구 감시는 필수이며 온습도와 설비 과열은 독립적인 확장 입력이다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 08</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 476.28 576.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 567.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>rgb</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M199,-559C199,-559 26,-559 26,-559 20,-559 14,-553 14,-547 14,-547 14,-534 14,-534 14,-528 20,-522 26,-522 26,-522 199,-522 199,-522 205,-522 211,-528 211,-534 211,-534 211,-547 211,-547 211,-553 205,-559 199,-559" />
+<text text-anchor="middle" x="112.5" y="-536.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">필수｜현장 RGB 카메라</text>
+</g>
+
+<g id="node3" class="node">
+<title>p</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M213,-472C213,-472 12,-472 12,-472 6,-472 0,-466 0,-460 0,-460 0,-447 0,-447 0,-441 6,-435 12,-435 12,-435 213,-435 213,-435 219,-435 225,-441 225,-447 225,-447 225,-460 225,-460 225,-466 219,-472 213,-472" />
+<text text-anchor="middle" x="112.5" y="-449.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi B｜작업자별 보호구 판정</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>rgb-&gt;p</title>
+<path fill="none" stroke="#51707d" d="M112.5,-521.89C112.5,-509.58 112.5,-492.97 112.5,-479.32" />
+<polygon fill="#51707d" stroke="#51707d" points="115.02,-479.29 112.5,-472.09 109.98,-479.29 115.02,-479.29" />
+<text text-anchor="middle" x="125" y="-493.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">영상</text>
+</g>
+
+<g id="node2" class="node">
+<title>ir</title>
+<path fill="#f3eef8" stroke="#9176a8" stroke-width="1.5" d="M434.5,-559C434.5,-559 276.5,-559 276.5,-559 270.5,-559 264.5,-553 264.5,-547 264.5,-547 264.5,-534 264.5,-534 264.5,-528 270.5,-522 276.5,-522 276.5,-522 434.5,-522 434.5,-522 440.5,-522 446.5,-528 446.5,-534 446.5,-534 446.5,-547 446.5,-547 446.5,-553 440.5,-559 434.5,-559" />
+<text text-anchor="middle" x="355.5" y="-536.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">확장｜온습도·열화상</text>
+</g>
+
+<g id="node4" class="node">
+<title>t</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M447,-472C447,-472 264,-472 264,-472 258,-472 252,-466 252,-460 252,-460 252,-447 252,-447 252,-441 258,-435 264,-435 264,-435 447,-435 447,-435 453,-435 459,-441 459,-447 459,-447 459,-460 459,-460 459,-466 453,-472 447,-472" />
+<text text-anchor="middle" x="355.5" y="-449.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">범위 이탈·과열 징후 판단</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>ir-&gt;t</title>
+<path fill="none" stroke="#51707d" d="M355.5,-521.89C355.5,-509.58 355.5,-492.97 355.5,-479.32" />
+<polygon fill="#51707d" stroke="#51707d" points="358.02,-479.29 355.5,-472.09 352.98,-479.29 358.02,-479.29" />
+<text text-anchor="middle" x="368" y="-493.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">측정</text>
+</g>
+
+<g id="node5" class="node">
+<title>st</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M312.5,-385C312.5,-385 154.5,-385 154.5,-385 148.5,-385 142.5,-379 142.5,-373 142.5,-373 142.5,-360 142.5,-360 142.5,-354 148.5,-348 154.5,-348 154.5,-348 312.5,-348 312.5,-348 318.5,-348 324.5,-354 324.5,-360 324.5,-360 324.5,-373 324.5,-373 324.5,-379 318.5,-385 312.5,-385" />
+<text text-anchor="middle" x="233.5" y="-362.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">원인별 최신 상태 갱신</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>p-&gt;st</title>
+<path fill="none" stroke="#51707d" d="M137.57,-434.89C156.39,-421.67 182.27,-403.49 202.41,-389.34" />
+<polygon fill="#51707d" stroke="#51707d" points="204.02,-391.29 208.46,-385.09 201.12,-387.17 204.02,-391.29" />
+<text text-anchor="middle" x="212.5" y="-406.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">보호구 상태</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>t-&gt;st</title>
+<path fill="none" stroke="#51707d" d="M330.22,-434.89C311.25,-421.67 285.15,-403.49 264.85,-389.34" />
+<polygon fill="#51707d" stroke="#51707d" points="266.09,-387.14 258.75,-385.09 263.21,-391.27 266.09,-387.14" />
+<text text-anchor="middle" x="328.5" y="-406.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">환경 상태</text>
+</g>
+
+<g id="node6" class="node">
+<title>q</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="233.5,-311 114.5,-255 233.5,-199 352.5,-255 233.5,-311" />
+<text text-anchor="middle" x="233.5" y="-260.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">활성 경보</text>
+<text text-anchor="middle" x="233.5" y="-241.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">원인이 있나?</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>st-&gt;q</title>
+<path fill="none" stroke="#51707d" d="M233.5,-347.91C233.5,-339.75 233.5,-329.52 233.5,-318.86" />
+<polygon fill="#51707d" stroke="#51707d" points="236.02,-318.64 233.5,-311.44 230.98,-318.64 236.02,-318.64" />
+</g>
+
+<g id="node7" class="node">
+<title>al</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M202.5,-139.5C202.5,-139.5 44.5,-139.5 44.5,-139.5 38.5,-139.5 32.5,-133.5 32.5,-127.5 32.5,-127.5 32.5,-114.5 32.5,-114.5 32.5,-108.5 38.5,-102.5 44.5,-102.5 44.5,-102.5 202.5,-102.5 202.5,-102.5 208.5,-102.5 214.5,-108.5 214.5,-114.5 214.5,-114.5 214.5,-127.5 214.5,-127.5 214.5,-133.5 208.5,-139.5 202.5,-139.5" />
+<text text-anchor="middle" x="123.5" y="-116.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi C｜LED·부저 경보</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>q-&gt;al</title>
+<path fill="none" stroke="#51707d" d="M200.5,-214.4C181.69,-191.82 158.76,-164.32 142.85,-145.21" />
+<polygon fill="#51707d" stroke="#51707d" points="144.69,-143.49 138.14,-139.57 140.82,-146.72 144.69,-143.49" />
+<text text-anchor="middle" x="179" y="-170.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node8" class="node">
+<title>ok</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M437,-149C437,-149 254,-149 254,-149 248,-149 242,-143 242,-137 242,-137 242,-105 242,-105 242,-99 248,-93 254,-93 254,-93 437,-93 437,-93 443,-93 449,-99 449,-105 449,-105 449,-137 449,-137 449,-143 443,-149 437,-149" />
+<text text-anchor="middle" x="345.5" y="-126.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">감시 상태 표시</text>
+<text text-anchor="middle" x="345.5" y="-107.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">확인 불가·오류 별도 표시</text>
+</g>
+
+<g id="edge7" class="edge">
+<title>q-&gt;ok</title>
+<path fill="none" stroke="#51707d" d="M267.1,-214.4C283.2,-195.43 302.25,-172.98 317.54,-154.96" />
+<polygon fill="#51707d" stroke="#51707d" points="319.83,-156.15 322.57,-149.03 315.99,-152.89 319.83,-156.15" />
+<text text-anchor="middle" x="325" y="-170.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="node9" class="node">
+<title>log</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M307.5,-56C307.5,-56 159.5,-56 159.5,-56 153.5,-56 147.5,-50 147.5,-44 147.5,-44 147.5,-12 147.5,-12 147.5,-6 153.5,0 159.5,0 159.5,0 307.5,0 307.5,0 313.5,0 319.5,-6 319.5,-12 319.5,-12 319.5,-44 319.5,-44 319.5,-50 313.5,-56 307.5,-56" />
+<text text-anchor="middle" x="233.5" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">발생·복귀 시각 기록</text>
+<text text-anchor="middle" x="233.5" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">다음 감시 주기로</text>
+</g>
+
+<g id="edge8" class="edge">
+<title>al-&gt;log</title>
+<path fill="none" stroke="#51707d" d="M144.71,-102.45C158.96,-90.67 178.14,-74.8 195.03,-60.82" />
+<polygon fill="#51707d" stroke="#51707d" points="196.72,-62.7 200.66,-56.16 193.51,-58.81 196.72,-62.7" />
+</g>
+
+<g id="edge9" class="edge">
+<title>ok-&gt;log</title>
+<path fill="none" stroke="#51707d" d="M312.2,-92.94C299.79,-82.86 285.58,-71.32 272.69,-60.84" />
+<polygon fill="#51707d" stroke="#51707d" points="274.04,-58.69 266.87,-56.11 270.86,-62.61 274.04,-58.69" />
+</g>
+</g>
+</svg></svg>

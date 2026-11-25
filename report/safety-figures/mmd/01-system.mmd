@@ -1,0 +1,21 @@
+flowchart TB
+    pc["PC｜보호구 모델 학습"]:::base
+    a["Pi A｜출입구 판정"]:::base
+    b["Pi B｜현장 감시"]:::base
+    m["MQTT 브로커"]:::base
+    c["Pi C｜경보·설비 제어"]:::base
+    g["모형 출입구·LED"]:::base
+    w["현장 LED·부저"]:::base
+    f["확장｜배연 팬"]:::ext
+    pc -->|"모델 배포"| a
+    pc -->|"모델 배포"| b
+    a -->|"개폐·표시"| g
+    a -->|"출입 결과"| m
+    b -->|"현장 상태"| m
+    m -->|"제어 명령"| c
+    c -->|"설비 상태"| m
+    c -->|"경보"| w
+    c -->|"확장"| f
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

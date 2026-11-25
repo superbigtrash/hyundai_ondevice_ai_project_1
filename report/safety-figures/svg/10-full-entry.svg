@@ -1,0 +1,320 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>출입구 전체 동작 흐름도</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">출입구 전체 동작 흐름도</text><text x="57" y="113" font-size="24" fill="#415b69">거리 측정에서 보호구 판정, 통과 확인, 닫힘과 대기 복귀까지의 전체 순환을 나타낸다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 10</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 1236.28 1385.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 1376.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>wait</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M711,-1287.5C711,-1287.5 577,-1287.5 577,-1287.5 571,-1287.5 565,-1281.5 565,-1275.5 565,-1275.5 565,-1262.5 565,-1262.5 565,-1256.5 571,-1250.5 577,-1250.5 577,-1250.5 711,-1250.5 711,-1250.5 717,-1250.5 723,-1256.5 723,-1262.5 723,-1262.5 723,-1275.5 723,-1275.5 723,-1281.5 717,-1287.5 711,-1287.5" />
+<text text-anchor="middle" x="644" y="-1264.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">대기 · 센서 A 측정</text>
+</g>
+
+<g id="node2" class="node">
+<title>near</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="896,-1306 776,-1269 896,-1232 1016,-1269 896,-1306" />
+<text text-anchor="middle" x="896" y="-1264.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">70 cm 미만?</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>wait-&gt;near</title>
+<path fill="none" stroke="#51707d" d="M723.48,-1269C726.34,-1269 728,-1269 728,-1269 728,-1269 748.1,-1269 768.64,-1269" />
+<polygon fill="#51707d" stroke="#51707d" points="768.69,-1271.52 775.89,-1269 768.69,-1266.48 768.69,-1271.52" />
+</g>
+
+<g id="node3" class="node">
+<title>back</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M1207,-1287.5C1207,-1287.5 1081,-1287.5 1081,-1287.5 1075,-1287.5 1069,-1281.5 1069,-1275.5 1069,-1275.5 1069,-1262.5 1069,-1262.5 1069,-1256.5 1075,-1250.5 1081,-1250.5 1081,-1250.5 1207,-1250.5 1207,-1250.5 1213,-1250.5 1219,-1256.5 1219,-1262.5 1219,-1262.5 1219,-1275.5 1219,-1275.5 1219,-1281.5 1213,-1287.5 1207,-1287.5" />
+<text text-anchor="middle" x="1144" y="-1264.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">한 걸음 뒤로 안내</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>near-&gt;back</title>
+<path fill="none" stroke="#51707d" d="M1016,-1269C1031.38,-1269 1046.83,-1269 1061.42,-1269" />
+<polygon fill="#51707d" stroke="#51707d" points="1061.76,-1271.52 1068.96,-1269 1061.76,-1266.48 1061.76,-1271.52" />
+<text text-anchor="middle" x="1042.5" y="-1275.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node4" class="node">
+<title>zone</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="244,-1182 97,-1126 244,-1070 391,-1126 244,-1182" />
+<text text-anchor="middle" x="244" y="-1131.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">90~150 cm에서</text>
+<text text-anchor="middle" x="244" y="-1112.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">1초 정지?</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>near-&gt;zone</title>
+<path fill="none" stroke="#51707d" d="M828.57,-1252.73C785.23,-1242.92 737,-1232 737,-1232 737,-1232 432,-1182 432,-1182 432,-1182 381.65,-1167.27 333.06,-1153.06" />
+<polygon fill="#51707d" stroke="#51707d" points="333.53,-1150.57 325.91,-1150.96 332.12,-1155.4 333.53,-1150.57" />
+<text text-anchor="middle" x="638.5" y="-1203.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>back-&gt;wait</title>
+<path fill="none" stroke="#51707d" d="M1086.67,-1287.61C1058.28,-1296.82 1030,-1306 1030,-1306 1030,-1306 914.5,-1328 914.5,-1328 914.5,-1328 877.5,-1328 877.5,-1328 877.5,-1328 763,-1306 763,-1306 763,-1306 737.91,-1298.2 710.78,-1289.76" />
+<polygon fill="#51707d" stroke="#51707d" points="711.47,-1287.34 703.85,-1287.61 709.98,-1292.15 711.47,-1287.34" />
+<text text-anchor="middle" x="896" y="-1327.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">재측정</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>zone-&gt;wait</title>
+<path fill="none" stroke="#51707d" d="M319.08,-1153.47C396.88,-1180.89 516.75,-1223.15 587.08,-1247.94" />
+<polygon fill="#51707d" stroke="#51707d" points="586.52,-1250.41 594.15,-1250.43 588.2,-1245.66 586.52,-1250.41" />
+<text text-anchor="middle" x="498.5" y="-1203.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="node5" class="node">
+<title>cam</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M591,-1154C591,-1154 457,-1154 457,-1154 451,-1154 445,-1148 445,-1142 445,-1142 445,-1110 445,-1110 445,-1104 451,-1098 457,-1098 457,-1098 591,-1098 591,-1098 597,-1098 603,-1104 603,-1110 603,-1110 603,-1142 603,-1142 603,-1148 597,-1154 591,-1154" />
+<text text-anchor="middle" x="524" y="-1131.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">카메라 판정</text>
+<text text-anchor="middle" x="524" y="-1112.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">N프레임 연속 확인</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>zone-&gt;cam</title>
+<path fill="none" stroke="#51707d" d="M391.38,-1126C407.09,-1126 422.67,-1126 437.33,-1126" />
+<polygon fill="#51707d" stroke="#51707d" points="437.72,-1128.52 444.92,-1126 437.72,-1123.48 437.72,-1128.52" />
+<text text-anchor="middle" x="418" y="-1132.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node6" class="node">
+<title>ppe</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="288,-1020 133,-964 288,-908 443,-964 288,-1020" />
+<text text-anchor="middle" x="288" y="-969.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">같은 사람의</text>
+<text text-anchor="middle" x="288" y="-950.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">보호구 판정 결과?</text>
+</g>
+
+<g id="edge7" class="edge">
+<title>cam-&gt;ppe</title>
+<path fill="none" stroke="#51707d" d="M483.97,-1097.86C446.49,-1072.45 390.02,-1034.16 347.31,-1005.21" />
+<polygon fill="#51707d" stroke="#51707d" points="348.49,-1002.96 341.11,-1001.01 345.66,-1007.13 348.49,-1002.96" />
+</g>
+
+<g id="edge8" class="edge">
+<title>ppe-&gt;wait</title>
+<path fill="none" stroke="#51707d" d="M211.95,-992.72C126.63,-1023.83 0,-1070 0,-1070 0,-1070 0,-1182 0,-1182 0,-1182 381.91,-1233 557.53,-1256.45" />
+<polygon fill="#51707d" stroke="#51707d" points="557.24,-1258.96 564.71,-1257.41 557.91,-1253.96 557.24,-1258.96" />
+<text text-anchor="middle" x="41.5" y="-1122.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">이탈·사람 없음</text>
+</g>
+
+<g id="node7" class="node">
+<title>hold</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M878,-992C878,-992 650,-992 650,-992 644,-992 638,-986 638,-980 638,-980 638,-948 638,-948 638,-942 644,-936 650,-936 650,-936 878,-936 878,-936 884,-936 890,-942 890,-948 890,-948 890,-980 890,-980 890,-986 884,-992 878,-992" />
+<text text-anchor="middle" x="764" y="-969.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">개방 보류</text>
+<text text-anchor="middle" x="764" y="-950.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">미착용 항목 또는 확인 불가 표시</text>
+</g>
+
+<g id="edge9" class="edge">
+<title>ppe-&gt;hold</title>
+<path fill="none" stroke="#51707d" d="M369.53,-990.76C435.15,-1012.3 516.5,-1039 516.5,-1039 516.5,-1039 611.5,-1039 611.5,-1039 611.5,-1039 658.36,-1015.95 700.13,-995.41" />
+<polygon fill="#51707d" stroke="#51707d" points="701.43,-997.58 706.78,-992.14 699.21,-993.06 701.43,-997.58" />
+<text text-anchor="middle" x="564" y="-1041.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">미착용·확인 불가</text>
+</g>
+
+<g id="node9" class="node">
+<title>open</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M381,-820.5C381,-820.5 177,-820.5 177,-820.5 171,-820.5 165,-814.5 165,-808.5 165,-808.5 165,-795.5 165,-795.5 165,-789.5 171,-783.5 177,-783.5 177,-783.5 381,-783.5 381,-783.5 387,-783.5 393,-789.5 393,-795.5 393,-795.5 393,-808.5 393,-808.5 393,-814.5 387,-820.5 381,-820.5" />
+<text text-anchor="middle" x="279" y="-797.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">개방 승인 · 스텝 모터 약 1초</text>
+</g>
+
+<g id="edge13" class="edge">
+<title>ppe-&gt;open</title>
+<path fill="none" stroke="#51707d" d="M284.95,-908.83C283.42,-881.54 281.63,-849.76 280.42,-828.2" />
+<polygon fill="#51707d" stroke="#51707d" points="282.92,-827.79 280,-820.74 277.89,-828.07 282.92,-827.79" />
+<text text-anchor="middle" x="339" y="-879.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">모두 착용·연속 확인</text>
+</g>
+
+<g id="node8" class="node">
+<title>retry</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="597,-858 442,-802 597,-746 752,-802 597,-858" />
+<text text-anchor="middle" x="597" y="-807.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">10초 이내</text>
+<text text-anchor="middle" x="597" y="-788.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">구간에 계속 있음?</text>
+</g>
+
+<g id="edge10" class="edge">
+<title>hold-&gt;retry</title>
+<path fill="none" stroke="#51707d" d="M735.67,-935.86C710.7,-911.94 673.82,-876.6 644.37,-848.39" />
+<polygon fill="#51707d" stroke="#51707d" points="645.91,-846.37 638.96,-843.21 642.42,-850.01 645.91,-846.37" />
+</g>
+
+<g id="edge12" class="edge">
+<title>retry-&gt;wait</title>
+<path fill="none" stroke="#51707d" d="M602.36,-856.07C612.49,-956.3 634.09,-1169.92 641.47,-1242.93" />
+<polygon fill="#51707d" stroke="#51707d" points="638.98,-1243.43 642.21,-1250.34 644,-1242.92 638.98,-1243.43" />
+<text text-anchor="middle" x="640.5" y="-1041.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="edge11" class="edge">
+<title>retry-&gt;cam</title>
+<path fill="none" stroke="#51707d" d="M579.91,-851.98C555.88,-920.85 515,-1038 515,-1038 515,-1038 515,-1052 515,-1052 515,-1052 517.43,-1071.71 519.76,-1090.64" />
+<polygon fill="#51707d" stroke="#51707d" points="517.27,-1090.98 520.65,-1097.82 522.27,-1090.36 517.27,-1090.98" />
+<text text-anchor="middle" x="566.5" y="-960.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node10" class="node">
+<title>passage_open</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M316,-681C316,-681 230,-681 230,-681 224,-681 218,-675 218,-669 218,-669 218,-637 218,-637 218,-631 224,-625 230,-625 230,-625 316,-625 316,-625 322,-625 328,-631 328,-637 328,-637 328,-669 328,-669 328,-675 322,-681 316,-681" />
+<text text-anchor="middle" x="273" y="-658.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">개방 상태</text>
+<text text-anchor="middle" x="273" y="-639.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">센서 B 확인</text>
+</g>
+
+<g id="edge14" class="edge">
+<title>open-&gt;passage_open</title>
+<path fill="none" stroke="#51707d" d="M278.28,-783.27C277.32,-759.83 275.61,-718.02 274.4,-688.3" />
+<polygon fill="#51707d" stroke="#51707d" points="276.91,-688.12 274.1,-681.03 271.88,-688.33 276.91,-688.12" />
+</g>
+
+<g id="node11" class="node">
+<title>passage_pass</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="482,-709 382,-653 482,-597 582,-653 482,-709" />
+<text text-anchor="middle" x="482" y="-658.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">통과를</text>
+<text text-anchor="middle" x="482" y="-639.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">감지했나?</text>
+</g>
+
+<g id="edge15" class="edge">
+<title>passage_open-&gt;passage_pass</title>
+<path fill="none" stroke="#51707d" d="M328.23,-653C336.69,-653 342.67,-653 342.67,-653 342.67,-653 358.11,-653 374.46,-653" />
+<polygon fill="#51707d" stroke="#51707d" points="374.78,-655.52 381.98,-653 374.78,-650.48 374.78,-655.52" />
+</g>
+
+<g id="node12" class="node">
+<title>passage_delay</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="620,-547 469,-491 620,-435 771,-491 620,-547" />
+<text text-anchor="middle" x="620" y="-496.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">통과 후 1~2초</text>
+<text text-anchor="middle" x="620" y="-477.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">연속으로 비었나?</text>
+</g>
+
+<g id="edge16" class="edge">
+<title>passage_pass-&gt;passage_delay</title>
+<path fill="none" stroke="#51707d" d="M514.01,-614.89C533.39,-592.41 558.31,-563.52 579.12,-539.4" />
+<polygon fill="#51707d" stroke="#51707d" points="581.24,-540.8 584.03,-533.7 577.42,-537.5 581.24,-540.8" />
+<text text-anchor="middle" x="562.5" y="-568.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node13" class="node">
+<title>passage_limit</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="271,-547 155,-491 271,-435 387,-491 271,-547" />
+<text text-anchor="middle" x="271" y="-496.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">10초 동안</text>
+<text text-anchor="middle" x="271" y="-477.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">미통과인가?</text>
+</g>
+
+<g id="edge19" class="edge">
+<title>passage_pass-&gt;passage_limit</title>
+<path fill="none" stroke="#51707d" d="M440.06,-620.2C405.98,-594.35 357.78,-557.81 321.57,-530.35" />
+<polygon fill="#51707d" stroke="#51707d" points="322.67,-528.02 315.41,-525.67 319.62,-532.03 322.67,-528.02" />
+<text text-anchor="middle" x="401.5" y="-568.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="edge17" class="edge">
+<title>passage_delay-&gt;passage_delay</title>
+<path fill="none" stroke="#51707d" d="M730.82,-506C768.1,-506.04 798,-501.04 798,-491 798,-481.63 771.94,-476.65 738.14,-476.06" />
+<polygon fill="#51707d" stroke="#51707d" points="738.04,-473.54 730.82,-476 737.99,-478.58 738.04,-473.54" />
+<text text-anchor="middle" x="848.5" y="-487.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요 · 확인 계속</text>
+</g>
+
+<g id="node15" class="node">
+<title>passage_close</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M630.5,-347.5C630.5,-347.5 559.5,-347.5 559.5,-347.5 553.5,-347.5 547.5,-341.5 547.5,-335.5 547.5,-335.5 547.5,-322.5 547.5,-322.5 547.5,-316.5 553.5,-310.5 559.5,-310.5 559.5,-310.5 630.5,-310.5 630.5,-310.5 636.5,-310.5 642.5,-316.5 642.5,-322.5 642.5,-322.5 642.5,-335.5 642.5,-335.5 642.5,-341.5 636.5,-347.5 630.5,-347.5" />
+<text text-anchor="middle" x="595" y="-324.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">닫힘 구동</text>
+</g>
+
+<g id="edge18" class="edge">
+<title>passage_delay-&gt;passage_close</title>
+<path fill="none" stroke="#51707d" d="M611.81,-437.61C607.48,-409.89 602.36,-377.13 598.92,-355.1" />
+<polygon fill="#51707d" stroke="#51707d" points="601.38,-354.51 597.78,-347.78 596.4,-355.28 601.38,-354.51" />
+<text text-anchor="middle" x="614.5" y="-406.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="edge20" class="edge">
+<title>passage_limit-&gt;passage_open</title>
+<path fill="none" stroke="#51707d" d="M271.69,-546.86C271.98,-570.31 272.31,-596.96 272.57,-617.56" />
+<polygon fill="#51707d" stroke="#51707d" points="270.05,-617.69 272.66,-624.86 275.09,-617.63 270.05,-617.69" />
+<text text-anchor="middle" x="291.5" y="-568.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="node14" class="node">
+<title>passage_clear</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="148,-385 57,-329 148,-273 239,-329 148,-385" />
+<text text-anchor="middle" x="148" y="-334.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">센서 B가</text>
+<text text-anchor="middle" x="148" y="-315.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">비었나?</text>
+</g>
+
+<g id="edge21" class="edge">
+<title>passage_limit-&gt;passage_clear</title>
+<path fill="none" stroke="#51707d" d="M239.96,-449.63C222.05,-426.33 199.53,-397.03 181.26,-373.26" />
+<polygon fill="#51707d" stroke="#51707d" points="183.09,-371.51 176.71,-367.34 179.1,-374.59 183.09,-371.51" />
+<text text-anchor="middle" x="220.5" y="-406.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="edge22" class="edge">
+<title>passage_clear-&gt;passage_open</title>
+<path fill="none" stroke="#51707d" d="M129.59,-373.92C117.54,-402.69 104,-435 104,-435 104,-435 104,-547 104,-547 104,-547 173.35,-590.08 223.2,-621.06" />
+<polygon fill="#51707d" stroke="#51707d" points="222.03,-623.3 229.48,-624.96 224.69,-619.02 222.03,-623.3" />
+<text text-anchor="middle" x="122.5" y="-487.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="edge23" class="edge">
+<title>passage_clear-&gt;passage_close</title>
+<path fill="none" stroke="#51707d" d="M239.27,-329C329.5,-329 464.62,-329 539.7,-329" />
+<polygon fill="#51707d" stroke="#51707d" points="540.02,-331.52 547.22,-329 540.02,-326.48 540.02,-331.52" />
+<text text-anchor="middle" x="393.25" y="-335.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node16" class="node">
+<title>passage_safe</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="580,-236 476,-180 580,-124 684,-180 580,-236" />
+<text text-anchor="middle" x="580" y="-185.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">닫는 중</text>
+<text text-anchor="middle" x="580" y="-166.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">사람 감지?</text>
+</g>
+
+<g id="edge24" class="edge">
+<title>passage_close-&gt;passage_safe</title>
+<path fill="none" stroke="#51707d" d="M593.19,-310.27C591.42,-292.96 588.64,-265.65 586.08,-240.58" />
+<polygon fill="#51707d" stroke="#51707d" points="588.57,-240.14 585.33,-233.23 583.55,-240.65 588.57,-240.14" />
+</g>
+
+<g id="node17" class="node">
+<title>passage_re</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M878,-198.5C878,-198.5 750,-198.5 750,-198.5 744,-198.5 738,-192.5 738,-186.5 738,-186.5 738,-173.5 738,-173.5 738,-167.5 744,-161.5 750,-161.5 750,-161.5 878,-161.5 878,-161.5 884,-161.5 890,-167.5 890,-173.5 890,-173.5 890,-186.5 890,-186.5 890,-192.5 884,-198.5 878,-198.5" />
+<text text-anchor="middle" x="814" y="-175.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">즉시 정지·재개방</text>
+</g>
+
+<g id="edge25" class="edge">
+<title>passage_safe-&gt;passage_re</title>
+<path fill="none" stroke="#51707d" d="M684.34,-180C699.84,-180 715.64,-180 730.64,-180" />
+<polygon fill="#51707d" stroke="#51707d" points="730.73,-182.52 737.93,-180 730.73,-177.48 730.73,-182.52" />
+<text text-anchor="middle" x="711" y="-186.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="node18" class="node">
+<title>passage_done</title>
+<polygon fill="#fff0c7" stroke="#af812d" stroke-width="1.5" points="649,-74 545,-37 649,0 753,-37 649,-74" />
+<text text-anchor="middle" x="649" y="-32.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">닫힘 완료?</text>
+</g>
+
+<g id="edge27" class="edge">
+<title>passage_safe-&gt;passage_done</title>
+<path fill="none" stroke="#51707d" d="M602.54,-135.69C610.73,-119.97 618,-106 618,-106 618,-106 624.6,-91.52 631.71,-75.93" />
+<polygon fill="#51707d" stroke="#51707d" points="634.08,-76.81 634.77,-69.21 629.49,-74.72 634.08,-76.81" />
+<text text-anchor="middle" x="641.5" y="-95.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+
+<g id="edge26" class="edge">
+<title>passage_re-&gt;passage_open</title>
+<path fill="none" stroke="#51707d" d="M776.98,-198.55C743.03,-214.65 698,-236 698,-236 698,-236 534,-273 534,-273 534,-273 455,-435 455,-435 455,-435 410,-579 410,-579 410,-579 368,-597 368,-597 368,-597 347.86,-608.66 326.13,-621.24" />
+<polygon fill="#51707d" stroke="#51707d" points="324.63,-619.19 319.67,-624.98 327.16,-623.56 324.63,-619.19" />
+</g>
+
+<g id="edge29" class="edge">
+<title>passage_done-&gt;wait</title>
+<path fill="none" stroke="#51707d" d="M701.22,-55.61C775.82,-80.77 904,-124 904,-124 904,-124 931,-179 931,-179 931,-1127 931,-1127 931,-1127 931,-1127 766.11,-1208.01 686.29,-1247.22" />
+<polygon fill="#51707d" stroke="#51707d" points="685.12,-1244.99 679.77,-1250.43 687.34,-1249.51 685.12,-1244.99" />
+<text text-anchor="middle" x="937.5" y="-649.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">예</text>
+</g>
+
+<g id="edge28" class="edge">
+<title>passage_done-&gt;passage_safe</title>
+<path fill="none" stroke="#51707d" d="M615.46,-62.47C595.88,-76.76 575,-92 575,-92 575,-92 575,-106 575,-106 575,-106 575.35,-111.06 575.86,-118.51" />
+<polygon fill="#51707d" stroke="#51707d" points="573.36,-118.94 576.37,-125.95 578.39,-118.59 573.36,-118.94" />
+<text text-anchor="middle" x="593.5" y="-95.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">아니요</text>
+</g>
+</g>
+</svg></svg>
