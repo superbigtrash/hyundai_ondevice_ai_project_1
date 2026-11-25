@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>시스템 전체 구성</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">시스템 전체 구성</text><text x="57" y="113" font-size="24" fill="#415b69">두 대의 Pi가 영상을 판정하고, 세 번째 Pi가 현장 경보와 설비를 제어한다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 01</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 411.28 402.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 393.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>pc</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M248.5,-385C248.5,-385 87.5,-385 87.5,-385 81.5,-385 75.5,-379 75.5,-373 75.5,-373 75.5,-360 75.5,-360 75.5,-354 81.5,-348 87.5,-348 87.5,-348 248.5,-348 248.5,-348 254.5,-348 260.5,-354 260.5,-360 260.5,-360 260.5,-373 260.5,-373 260.5,-379 254.5,-385 248.5,-385" />
+<text text-anchor="middle" x="168" y="-362.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">PC｜보호구 모델 학습</text>
+</g>
+
+<g id="node2" class="node">
+<title>a</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M146,-298C146,-298 12,-298 12,-298 6,-298 0,-292 0,-286 0,-286 0,-273 0,-273 0,-267 6,-261 12,-261 12,-261 146,-261 146,-261 152,-261 158,-267 158,-273 158,-273 158,-286 158,-286 158,-292 152,-298 146,-298" />
+<text text-anchor="middle" x="79" y="-275.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi A｜출입구 판정</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>pc-&gt;a</title>
+<path fill="none" stroke="#51707d" d="M149.56,-347.89C135.96,-334.9 117.33,-317.11 102.64,-303.08" />
+<polygon fill="#51707d" stroke="#51707d" points="104.36,-301.24 97.42,-298.09 100.88,-304.88 104.36,-301.24" />
+<text text-anchor="middle" x="155" y="-319.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">모델 배포</text>
+</g>
+
+<g id="node3" class="node">
+<title>b</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M316.5,-298C316.5,-298 197.5,-298 197.5,-298 191.5,-298 185.5,-292 185.5,-286 185.5,-286 185.5,-273 185.5,-273 185.5,-267 191.5,-261 197.5,-261 197.5,-261 316.5,-261 316.5,-261 322.5,-261 328.5,-267 328.5,-273 328.5,-273 328.5,-286 328.5,-286 328.5,-292 322.5,-298 316.5,-298" />
+<text text-anchor="middle" x="257" y="-275.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi B｜현장 감시</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>pc-&gt;b</title>
+<path fill="none" stroke="#51707d" d="M186.44,-347.89C200.04,-334.9 218.67,-317.11 233.36,-303.08" />
+<polygon fill="#51707d" stroke="#51707d" points="235.12,-304.88 238.58,-298.09 231.64,-301.24 235.12,-304.88" />
+<text text-anchor="middle" x="243" y="-319.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">모델 배포</text>
+</g>
+
+<g id="node4" class="node">
+<title>m</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M301,-211C301,-211 199,-211 199,-211 193,-211 187,-205 187,-199 187,-199 187,-186 187,-186 187,-180 193,-174 199,-174 199,-174 301,-174 301,-174 307,-174 313,-180 313,-186 313,-186 313,-199 313,-199 313,-205 307,-211 301,-211" />
+<text text-anchor="middle" x="250" y="-188.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">MQTT 브로커</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>a-&gt;m</title>
+<path fill="none" stroke="#51707d" d="M114.43,-260.89C141.6,-247.38 179.19,-228.7 207.89,-214.43" />
+<polygon fill="#51707d" stroke="#51707d" points="209.29,-216.55 214.61,-211.09 207.04,-212.04 209.29,-216.55" />
+<text text-anchor="middle" x="200" y="-232.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">출입 결과</text>
+</g>
+
+<g id="node6" class="node">
+<title>g</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M143,-211C143,-211 15,-211 15,-211 9,-211 3,-205 3,-199 3,-199 3,-186 3,-186 3,-180 9,-174 15,-174 15,-174 143,-174 143,-174 149,-174 155,-180 155,-186 155,-186 155,-199 155,-199 155,-205 149,-211 143,-211" />
+<text text-anchor="middle" x="79" y="-188.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">모형 출입구·LED</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>a-&gt;g</title>
+<path fill="none" stroke="#51707d" d="M79,-260.89C79,-248.58 79,-231.97 79,-218.32" />
+<polygon fill="#51707d" stroke="#51707d" points="81.52,-218.29 79,-211.09 76.48,-218.29 81.52,-218.29" />
+<text text-anchor="middle" x="107" y="-232.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">개폐·표시</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>b-&gt;m</title>
+<path fill="none" stroke="#51707d" d="M255.55,-260.89C254.54,-248.58 253.17,-231.97 252.04,-218.32" />
+<polygon fill="#51707d" stroke="#51707d" points="254.55,-218.06 251.45,-211.09 249.53,-218.47 254.55,-218.06" />
+<text text-anchor="middle" x="279" y="-232.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">현장 상태</text>
+</g>
+
+<g id="node5" class="node">
+<title>c</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M329.5,-124C329.5,-124 170.5,-124 170.5,-124 164.5,-124 158.5,-118 158.5,-112 158.5,-112 158.5,-99 158.5,-99 158.5,-93 164.5,-87 170.5,-87 170.5,-87 329.5,-87 329.5,-87 335.5,-87 341.5,-93 341.5,-99 341.5,-99 341.5,-112 341.5,-112 341.5,-118 335.5,-124 329.5,-124" />
+<text text-anchor="middle" x="250" y="-101.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi C｜경보·설비 제어</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>m-&gt;c</title>
+<path fill="none" stroke="#51707d" d="M228.75,-173.96C217.92,-165.01 207,-156 207,-156 207,-156 207,-142 207,-142 207,-142 214.21,-136.05 222.72,-129.02" />
+<polygon fill="#51707d" stroke="#51707d" points="224.8,-130.57 228.75,-124.04 221.6,-126.68 224.8,-130.57" />
+<text text-anchor="middle" x="233" y="-145.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">제어 명령</text>
+</g>
+
+<g id="edge7" class="edge">
+<title>c-&gt;m</title>
+<path fill="none" stroke="#51707d" d="M255.5,-124.25C258.25,-133.12 261,-142 261,-142 261,-142 261,-156 261,-156 261,-156 259.52,-160.79 257.64,-166.84" />
+<polygon fill="#51707d" stroke="#51707d" points="255.22,-166.13 255.5,-173.75 260.04,-167.62 255.22,-166.13" />
+<text text-anchor="middle" x="287" y="-145.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">설비 상태</text>
+</g>
+
+<g id="node7" class="node">
+<title>w</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M227,-37C227,-37 115,-37 115,-37 109,-37 103,-31 103,-25 103,-25 103,-12 103,-12 103,-6 109,0 115,0 115,0 227,0 227,0 233,0 239,-6 239,-12 239,-12 239,-25 239,-25 239,-31 233,-37 227,-37" />
+<text text-anchor="middle" x="171" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">현장 LED·부저</text>
+</g>
+
+<g id="edge8" class="edge">
+<title>c-&gt;w</title>
+<path fill="none" stroke="#51707d" d="M233.63,-86.89C221.66,-74.01 205.32,-56.42 192.33,-42.45" />
+<polygon fill="#51707d" stroke="#51707d" points="194.1,-40.65 187.35,-37.09 190.4,-44.08 194.1,-40.65" />
+<text text-anchor="middle" x="227.5" y="-58.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">경보</text>
+</g>
+
+<g id="node8" class="node">
+<title>f</title>
+<path fill="#f3eef8" stroke="#9176a8" stroke-width="1.5" d="M382,-37C382,-37 278,-37 278,-37 272,-37 266,-31 266,-25 266,-25 266,-12 266,-12 266,-6 272,0 278,0 278,0 382,0 382,0 388,0 394,-6 394,-12 394,-12 394,-25 394,-25 394,-31 388,-37 382,-37" />
+<text text-anchor="middle" x="330" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">확장｜배연 팬</text>
+</g>
+
+<g id="edge9" class="edge">
+<title>c-&gt;f</title>
+<path fill="none" stroke="#51707d" d="M266.58,-86.89C278.7,-74.01 295.25,-56.42 308.4,-42.45" />
+<polygon fill="#51707d" stroke="#51707d" points="310.35,-44.06 313.45,-37.09 306.68,-40.61 310.35,-44.06" />
+<text text-anchor="middle" x="306.5" y="-58.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">확장</text>
+</g>
+</g>
+</svg></svg>

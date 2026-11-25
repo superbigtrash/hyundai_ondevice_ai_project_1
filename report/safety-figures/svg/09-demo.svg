@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>사람을 이용한 시연 시나리오</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">사람을 이용한 시연 시나리오</text><text x="57" y="113" font-size="24" fill="#415b69">실제 사람의 보호구를 판정하고 출입 승인과 경보 결과를 모형에서 확인한다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 09</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 926.78 255.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 246.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>a</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M170,-238C170,-238 12,-238 12,-238 6,-238 0,-232 0,-226 0,-226 0,-194 0,-194 0,-188 6,-182 12,-182 12,-182 170,-182 170,-182 176,-182 182,-188 182,-194 182,-194 182,-226 182,-226 182,-232 176,-238 170,-238" />
+<text text-anchor="middle" x="91" y="-215.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">필수｜시연자 접근</text>
+<text text-anchor="middle" x="91" y="-196.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">보호구 한 항목 미착용</text>
+</g>
+
+<g id="node2" class="node">
+<title>b</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M419,-238C419,-238 221,-238 221,-238 215,-238 209,-232 209,-226 209,-226 209,-194 209,-194 209,-188 215,-182 221,-182 221,-182 419,-182 419,-182 425,-182 431,-188 431,-194 431,-194 431,-226 431,-226 431,-232 425,-238 419,-238" />
+<text text-anchor="middle" x="320" y="-215.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">개방 보류</text>
+<text text-anchor="middle" x="320" y="-196.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">빨간 LED·미착용 항목 표시</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>a-&gt;b</title>
+<path fill="none" stroke="#51707d" d="M182.05,-210C187.65,-210 194.35,-210 201.24,-210" />
+<polygon fill="#51707d" stroke="#51707d" points="201.54,-212.52 208.74,-210 201.54,-207.48 201.54,-212.52" />
+</g>
+
+<g id="node3" class="node">
+<title>c</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M399,-147C399,-147 241,-147 241,-147 235,-147 229,-141 229,-135 229,-135 229,-103 229,-103 229,-97 235,-91 241,-91 241,-91 399,-91 399,-91 405,-91 411,-97 411,-103 411,-103 411,-135 411,-135 411,-141 405,-147 399,-147" />
+<text text-anchor="middle" x="320" y="-124.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">보호구 착용 후 재판정</text>
+<text text-anchor="middle" x="320" y="-105.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">모형 출입구 개방</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>b-&gt;c</title>
+<path fill="none" stroke="#51707d" d="M320,-181.81C320,-173.19 320,-163.53 320,-154.46" />
+<polygon fill="#51707d" stroke="#51707d" points="322.52,-154.22 320,-147.02 317.48,-154.22 322.52,-154.22" />
+</g>
+
+<g id="node4" class="node">
+<title>d</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M623.5,-147C623.5,-147 450.5,-147 450.5,-147 444.5,-147 438.5,-141 438.5,-135 438.5,-135 438.5,-103 438.5,-103 438.5,-97 444.5,-91 450.5,-91 450.5,-91 623.5,-91 623.5,-91 629.5,-91 635.5,-97 635.5,-103 635.5,-103 635.5,-135 635.5,-135 635.5,-141 629.5,-147 623.5,-147" />
+<text text-anchor="middle" x="537" y="-124.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">통과 신호 확인</text>
+<text text-anchor="middle" x="537" y="-105.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">비어 있으면 출입구 닫힘</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>c-&gt;d</title>
+<path fill="none" stroke="#51707d" d="M411.34,-119C417.42,-119 424.35,-119 431.16,-119" />
+<polygon fill="#51707d" stroke="#51707d" points="431.25,-121.52 438.45,-119 431.25,-116.48 431.25,-121.52" />
+</g>
+
+<g id="node5" class="node">
+<title>e</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M639.5,-56C639.5,-56 434.5,-56 434.5,-56 428.5,-56 422.5,-50 422.5,-44 422.5,-44 422.5,-12 422.5,-12 422.5,-6 428.5,0 434.5,0 434.5,0 639.5,0 639.5,0 645.5,0 651.5,-6 651.5,-12 651.5,-12 651.5,-44 651.5,-44 651.5,-50 645.5,-56 639.5,-56" />
+<text text-anchor="middle" x="537" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">현장 카메라에서 미착용 시연</text>
+<text text-anchor="middle" x="537" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">LED·부저 경보 확인</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>d-&gt;e</title>
+<path fill="none" stroke="#51707d" d="M537,-90.81C537,-82.19 537,-72.53 537,-63.46" />
+<polygon fill="#51707d" stroke="#51707d" points="539.52,-63.22 537,-56.02 534.48,-63.22 539.52,-63.22" />
+</g>
+
+<g id="node6" class="node">
+<title>x</title>
+<path fill="#f3eef8" stroke="#9176a8" stroke-width="1.5" d="M663.5,-228.5C663.5,-228.5 470.5,-228.5 470.5,-228.5 464.5,-228.5 458.5,-222.5 458.5,-216.5 458.5,-216.5 458.5,-203.5 458.5,-203.5 458.5,-197.5 464.5,-191.5 470.5,-191.5 470.5,-191.5 663.5,-191.5 663.5,-191.5 669.5,-191.5 675.5,-197.5 675.5,-203.5 675.5,-203.5 675.5,-216.5 675.5,-216.5 675.5,-222.5 669.5,-228.5 663.5,-228.5" />
+<text text-anchor="middle" x="567" y="-205.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">확장｜온습도·열화상 입력</text>
+</g>
+
+<g id="node7" class="node">
+<title>y</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M897.5,-228.5C897.5,-228.5 714.5,-228.5 714.5,-228.5 708.5,-228.5 702.5,-222.5 702.5,-216.5 702.5,-216.5 702.5,-203.5 702.5,-203.5 702.5,-197.5 708.5,-191.5 714.5,-191.5 714.5,-191.5 897.5,-191.5 897.5,-191.5 903.5,-191.5 909.5,-197.5 909.5,-203.5 909.5,-203.5 909.5,-216.5 909.5,-216.5 909.5,-222.5 903.5,-228.5 897.5,-228.5" />
+<text text-anchor="middle" x="806" y="-205.9" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">범위 이탈·설비 과열 표시</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>x-&gt;y</title>
+<path fill="none" stroke="#51707d" d="M675.88,-210C682.14,-210 688.77,-210 695.1,-210" />
+<polygon fill="#51707d" stroke="#51707d" points="695.15,-212.52 702.35,-210 695.15,-207.48 695.15,-212.52" />
+</g>
+
+<g id="node8" class="node">
+<title>z</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M869,-147C869,-147 743,-147 743,-147 737,-147 731,-141 731,-135 731,-135 731,-103 731,-103 731,-97 737,-91 743,-91 743,-91 869,-91 869,-91 875,-91 881,-97 881,-103 881,-103 881,-135 881,-135 881,-141 875,-147 869,-147" />
+<text text-anchor="middle" x="806" y="-124.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">배연 연동 구현 시</text>
+<text text-anchor="middle" x="806" y="-105.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">모형 팬 동작 확인</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>y-&gt;z</title>
+<path fill="none" stroke="#51707d" d="M806,-191.42C806,-180.83 806,-166.99 806,-154.31" />
+<polygon fill="#51707d" stroke="#51707d" points="808.52,-154.21 806,-147.01 803.48,-154.21 808.52,-154.21" />
+</g>
+</g>
+</svg></svg>

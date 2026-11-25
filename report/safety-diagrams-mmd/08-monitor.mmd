@@ -1,0 +1,22 @@
+flowchart TB
+    rgb["필수｜현장 RGB 카메라"]:::base
+    ir["확장｜온습도·열화상"]:::ext
+    p["Pi B｜작업자별 보호구 판정"]:::base
+    t["범위 이탈·과열 징후 판단"]:::base
+    st["원인별 최신 상태 갱신"]:::base
+    q{"활성 경보<br/>원인이 있나?"}:::decision
+    al["Pi C｜LED·부저 경보"]:::base
+    ok["감시 상태 표시<br/>확인 불가·오류 별도 표시"]:::base
+    log["발생·복귀 시각 기록<br/>다음 감시 주기로"]:::base
+    rgb -->|"영상"| p
+    ir -->|"측정"| t
+    p -->|"보호구 상태"| st
+    t -->|"환경 상태"| st
+    st --> q
+    q -->|"예"| al
+    q -->|"아니요"| ok
+    al --> log
+    ok --> log
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

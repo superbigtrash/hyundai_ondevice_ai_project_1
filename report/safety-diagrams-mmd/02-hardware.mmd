@@ -1,0 +1,30 @@
+flowchart LR
+    cam["출입구 카메라"]:::base
+    a["Pi A｜출입구"]:::base
+    ds["화면·출입구 LED"]:::base
+    s["센서 A｜거리<br/>센서 B｜통과 구역"]:::base
+    ar["Arduino"]:::base
+    motor["모터 드라이버<br/>스텝 모터·모형 출입구"]:::base
+    rgb["현장 카메라"]:::base
+    ex["확장｜온습도·열화상"]:::ext
+    b["Pi B｜현장"]:::base
+    mq["MQTT 브로커"]:::base
+    c["Pi C｜설비 제어"]:::base
+    alarm["현장 LED·부저"]:::base
+    fan["확장｜배연 팬"]:::ext
+    cam -->|"영상"| a
+    a -->|"판정 표시"| ds
+    s -->|"측정"| ar
+    a -->|"개폐 지시"| ar
+    ar -->|"감지 상태"| a
+    ar -->|"구동"| motor
+    rgb -->|"영상"| b
+    ex -->|"측정"| b
+    a -->|"결과"| mq
+    b -->|"결과"| mq
+    mq -->|"명령"| c
+    c -->|"경보"| alarm
+    c -->|"확장"| fan
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

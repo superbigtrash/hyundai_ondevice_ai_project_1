@@ -1,0 +1,18 @@
+flowchart TB
+    a["필수｜시연자 접근<br/>보호구 한 항목 미착용"]:::base
+    b["개방 보류<br/>빨간 LED·미착용 항목 표시"]:::base
+    c["보호구 착용 후 재판정<br/>모형 출입구 개방"]:::base
+    d["통과 신호 확인<br/>비어 있으면 출입구 닫힘"]:::base
+    e["현장 카메라에서 미착용 시연<br/>LED·부저 경보 확인"]:::base
+    x["확장｜온습도·열화상 입력"]:::ext
+    y["범위 이탈·설비 과열 표시"]:::base
+    z["배연 연동 구현 시<br/>모형 팬 동작 확인"]:::base
+    a --> b
+    b --> c
+    c --> d
+    d --> e
+    x --> y
+    y --> z
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

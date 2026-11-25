@@ -1,0 +1,21 @@
+flowchart TB
+    i["A · B｜카메라 입력"]:::base
+    p["각 Pi의 YOLO 추론"]:::base
+    a["A｜사람별 보호구 판정<br/>연속 프레임 확인"]:::base
+    b["B｜작업자 상태 갱신"]:::base
+    e["확장｜온습도·열화상 판단"]:::ext
+    d["A｜화면 표시·출입구 제어"]:::base
+    s["서버｜결과·명령 처리<br/>MQTT 중계"]:::base
+    c["C｜경보·설비 제어<br/>상태 회신"]:::base
+    i -->|"프레임"| p
+    p -->|"출입구 검출"| a
+    p -->|"현장 검출"| b
+    e -->|"원인별 상태"| b
+    a -->|"판정"| d
+    a -->|"출입 결과"| s
+    b -->|"현장 결과"| s
+    s -->|"명령"| c
+    c -->|"상태"| s
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

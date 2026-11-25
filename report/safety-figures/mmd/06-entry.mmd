@@ -1,0 +1,26 @@
+flowchart TB
+    wait["대기 · 센서 A 측정"]:::base
+    near{"70 cm 미만?"}:::decision
+    back["한 걸음 뒤로 안내"]:::base
+    zone{"90~150 cm에서<br/>1초 정지?"}:::decision
+    cam["카메라 판정<br/>N프레임 연속 확인"]:::base
+    ppe{"같은 사람의<br/>보호구 판정 결과?"}:::decision
+    hold["개방 보류<br/>미착용 항목 또는 확인 불가 표시"]:::base
+    retry{"10초 이내<br/>구간에 계속 있음?"}:::decision
+    open["개방 승인<br/>스텝 모터 약 1초 → 그림 07"]:::base
+    wait --> near
+    near -->|"예"| back
+    back -->|"재측정"| wait
+    near -->|"아니요"| zone
+    zone -->|"아니요"| wait
+    zone -->|"예"| cam
+    cam --> ppe
+    ppe -->|"이탈·사람 없음"| wait
+    ppe -->|"미착용·확인 불가"| hold
+    hold --> retry
+    retry -->|"예"| cam
+    retry -->|"아니요"| wait
+    ppe -->|"모두 착용·연속 확인"| open
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

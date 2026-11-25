@@ -1,0 +1,29 @@
+flowchart TB
+    open["개방 상태<br/>센서 B 확인"]:::base
+    pass{"통과를<br/>감지했나?"}:::decision
+    delay{"통과 후 1~2초<br/>연속으로 비었나?"}:::decision
+    limit{"10초 동안<br/>미통과인가?"}:::decision
+    clear{"센서 B가<br/>비었나?"}:::decision
+    close["닫힘 구동"]:::base
+    safe{"닫는 중<br/>사람 감지?"}:::decision
+    re["즉시 정지·재개방"]:::base
+    done{"닫힘 완료?"}:::decision
+    wait["대기 복귀"]:::base
+    open --> pass
+    pass -->|"예"| delay
+    delay -->|"아니요 · 확인 계속"| delay
+    delay -->|"예"| close
+    pass -->|"아니요"| limit
+    limit -->|"아니요"| open
+    limit -->|"예"| clear
+    clear -->|"아니요"| open
+    clear -->|"예"| close
+    close --> safe
+    safe -->|"예"| re
+    re --> open
+    safe -->|"아니요"| done
+    done -->|"아니요"| safe
+    done -->|"예"| wait
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

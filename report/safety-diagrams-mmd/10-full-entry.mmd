@@ -1,0 +1,51 @@
+flowchart TB
+    wait["대기 · 센서 A 측정"]:::base
+    near{"70 cm 미만?"}:::decision
+    back["한 걸음 뒤로 안내"]:::base
+    zone{"90~150 cm에서<br/>1초 정지?"}:::decision
+    cam["카메라 판정<br/>N프레임 연속 확인"]:::base
+    ppe{"같은 사람의<br/>보호구 판정 결과?"}:::decision
+    hold["개방 보류<br/>미착용 항목 또는 확인 불가 표시"]:::base
+    retry{"10초 이내<br/>구간에 계속 있음?"}:::decision
+    open["개방 승인 · 스텝 모터 약 1초"]:::base
+    passage_open["개방 상태<br/>센서 B 확인"]:::base
+    passage_pass{"통과를<br/>감지했나?"}:::decision
+    passage_delay{"통과 후 1~2초<br/>연속으로 비었나?"}:::decision
+    passage_limit{"10초 동안<br/>미통과인가?"}:::decision
+    passage_clear{"센서 B가<br/>비었나?"}:::decision
+    passage_close["닫힘 구동"]:::base
+    passage_safe{"닫는 중<br/>사람 감지?"}:::decision
+    passage_re["즉시 정지·재개방"]:::base
+    passage_done{"닫힘 완료?"}:::decision
+    wait --> near
+    near -->|"예"| back
+    back -->|"재측정"| wait
+    near -->|"아니요"| zone
+    zone -->|"아니요"| wait
+    zone -->|"예"| cam
+    cam --> ppe
+    ppe -->|"이탈·사람 없음"| wait
+    ppe -->|"미착용·확인 불가"| hold
+    hold --> retry
+    retry -->|"예"| cam
+    retry -->|"아니요"| wait
+    ppe -->|"모두 착용·연속 확인"| open
+    open --> passage_open
+    passage_open --> passage_pass
+    passage_pass -->|"예"| passage_delay
+    passage_delay -->|"아니요 · 확인 계속"| passage_delay
+    passage_delay -->|"예"| passage_close
+    passage_pass -->|"아니요"| passage_limit
+    passage_limit -->|"아니요"| passage_open
+    passage_limit -->|"예"| passage_clear
+    passage_clear -->|"아니요"| passage_open
+    passage_clear -->|"예"| passage_close
+    passage_close --> passage_safe
+    passage_safe -->|"예"| passage_re
+    passage_re --> passage_open
+    passage_safe -->|"아니요"| passage_done
+    passage_done -->|"아니요"| passage_safe
+    passage_done -->|"예"| wait
+    classDef base fill:#edf6f5,stroke:#71979a,color:#15343f
+    classDef decision fill:#fff0c7,stroke:#af812d,color:#15343f
+    classDef ext fill:#f3eef8,stroke:#9176a8,color:#15343f

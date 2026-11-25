@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><title>MQTT 토픽과 장치 역할</title><rect width="1600" height="900" fill="white"/><g font-family="Noto Sans CJK KR, Malgun Gothic, sans-serif"><text x="55" y="66" fill="#15343f" font-size="46" font-weight="bold">MQTT 토픽과 장치 역할</text><text x="57" y="113" font-size="24" fill="#415b69">각 연결에 첨부 구성도의 토픽 이름을 그대로 표시했다.</text><text x="1542" y="61" font-size="21" text-anchor="end" fill="#12786e">그림 05</text></g><path d="M55 139H1545" fill="none" stroke="#a8c5c2" stroke-width="2"/><svg xmlns="http://www.w3.org/2000/svg" width="1510" height="700" viewBox="0.00 0.00 649.28 247.28" x="45" y="153">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 238.64)">
+<title>G</title>
+
+<g id="node1" class="node">
+<title>s</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M393,-230C393,-230 255,-230 255,-230 249,-230 243,-224 243,-218 243,-218 243,-205 243,-205 243,-199 249,-193 255,-193 255,-193 393,-193 393,-193 399,-193 405,-199 405,-205 405,-205 405,-218 405,-218 405,-224 399,-230 393,-230" />
+<text text-anchor="middle" x="324" y="-207.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">서버 실행 프로그램</text>
+</g>
+
+<g id="node2" class="node">
+<title>m</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M375,-143C375,-143 273,-143 273,-143 267,-143 261,-137 261,-131 261,-131 261,-118 261,-118 261,-112 267,-106 273,-106 273,-106 375,-106 375,-106 381,-106 387,-112 387,-118 387,-118 387,-131 387,-131 387,-137 381,-143 375,-143" />
+<text text-anchor="middle" x="324" y="-120.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">MQTT 브로커</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>s-&gt;m</title>
+<path fill="none" stroke="#51707d" d="M324,-192.89C324,-178.3 324,-157.67 324,-143.09" />
+<text text-anchor="middle" x="356" y="-164.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">메시지 연동</text>
+</g>
+
+<g id="node3" class="node">
+<title>a</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M176,-56C176,-56 12,-56 12,-56 6,-56 0,-50 0,-44 0,-44 0,-12 0,-12 0,-6 6,0 12,0 12,0 176,0 176,0 182,0 188,-6 188,-12 188,-12 188,-44 188,-44 188,-50 182,-56 176,-56" />
+<text text-anchor="middle" x="94" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi A｜출입구</text>
+<text text-anchor="middle" x="94" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">판정 결과·출입구 동작</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>m-&gt;a</title>
+<path fill="none" stroke="#51707d" d="M279.53,-105.96C256.85,-97.01 234,-88 234,-88 234,-88 195.07,-71.59 158.26,-56.08" />
+<text text-anchor="middle" x="276" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">result  /  door</text>
+</g>
+
+<g id="node4" class="node">
+<title>b</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M421,-56C421,-56 227,-56 227,-56 221,-56 215,-50 215,-44 215,-44 215,-12 215,-12 215,-6 221,0 227,0 227,0 421,0 421,0 427,0 433,-6 433,-12 433,-12 433,-44 433,-44 433,-50 427,-56 421,-56" />
+<text text-anchor="middle" x="324" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi B｜현장 감시</text>
+<text text-anchor="middle" x="324" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">보호구·열화상(확장)·경보</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>m-&gt;b</title>
+<path fill="none" stroke="#51707d" d="M324,-105.73C324,-91.82 324,-72.26 324,-56.36" />
+<text text-anchor="middle" x="396.5" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">ppe  /  thermal  /  alarm</text>
+</g>
+
+<g id="node5" class="node">
+<title>c</title>
+<path fill="#edf6f5" stroke="#71979a" stroke-width="1.5" d="M620,-56C620,-56 472,-56 472,-56 466,-56 460,-50 460,-44 460,-44 460,-12 460,-12 460,-6 466,0 472,0 472,0 620,0 620,0 626,0 632,-6 632,-12 632,-12 632,-44 632,-44 632,-50 626,-56 620,-56" />
+<text text-anchor="middle" x="546" y="-33.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">Pi C｜설비 제어</text>
+<text text-anchor="middle" x="546" y="-14.4" font-family="Noto Sans CJK KR" font-size="17.00" fill="#15343f">명령 수신·상태 송신</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>m-&gt;c</title>
+<path fill="none" stroke="#51707d" d="M387.16,-108.65C428.54,-98.92 475,-88 475,-88 475,-88 494.74,-71.59 513.41,-56.08" />
+<text text-anchor="middle" x="531" y="-77.6" font-family="Noto Sans CJK KR" font-size="13.00" fill="#243e4e">cmd  /  status</text>
+</g>
+</g>
+</svg></svg>
