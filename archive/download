@@ -1,6 +1,0 @@
-ppe3/
-runs/
-alerts/
-*.cache
-__pycache__/
-best_ncnn_model/
